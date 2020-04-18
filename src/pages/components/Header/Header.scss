@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+
+  .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    margin-left: 1rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
