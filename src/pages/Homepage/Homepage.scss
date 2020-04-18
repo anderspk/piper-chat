@@ -2,6 +2,7 @@
   text-align: center;
   padding-top: 4rem;
   color: white;
+  padding: 0 1rem;
 
   h1 {
     font-size: 2.5rem;
@@ -13,12 +14,10 @@
   }
 
   .buttons-container {
-    margin-top: 2rem;
-
     button {
+      margin-top: 2rem !important;
       padding: 0.8rem 0;
-      width: 100%;
-      max-width: 250px;
+      width: 250px;
       border-radius: 4px;
       color: white;
       font-weight: bold;
@@ -45,6 +44,7 @@
 
   img {
     max-height: 400px;
+    max-width: 50%;
     margin-top: 3rem;
   }
 }
