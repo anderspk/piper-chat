@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Svg from "../../svg/Svg";
 import "./Signup.scss";
+import * as auth from "../../helpers/auth";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await auth.signup(email, password);
+    } catch (error) {
+      setError(error.message);
+      console.error({ error });
+    }
+  };
+
+  const googleSignIn = async () => {
+    try {
+      await auth.signInWithGoogle();
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   return (
     <div className="signup">
       <section className="top">
@@ -14,9 +38,40 @@ const Signup = () => {
             </p>
             <form>
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" />
+              <input
+                type="email"
+                name="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <label htmlFor="password">Password</label>
-              <input type="password" />
+              <input
+                type="password"
+                name="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button className="sign-up" onClick={handleSubmit}>
+                Sign up
+              </button>
+              <div className="other-services-container">
+                <span>You can also sign up with any of these services</span>
+                <div className="buttons-container">
+                  <button
+                    type="button"
+                    className="google-signup"
+                    onClick={googleSignIn}
+                  >
+                    Sign up with Google
+                  </button>
+                  <button type="button" className="github-signup">
+                    Sign up with Github
+                  </button>
+                </div>
+              </div>
+              <ErrorMessage>{error}</ErrorMessage>
             </form>
           </div>
         </div>

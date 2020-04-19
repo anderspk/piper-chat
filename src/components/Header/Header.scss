@@ -8,11 +8,20 @@ header {
   justify-content: space-between;
   padding: 1rem 2rem;
   align-items: center;
+  height: 60px;
 
   .navbar-brand {
     color: white;
     font-weight: bold;
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      fill: white;
+      height: 100%;
+      margin-right: 2px;
+    }
   }
 
   nav a {
