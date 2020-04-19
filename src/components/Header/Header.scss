@@ -1,5 +1,10 @@
 header {
   display: flex;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
   justify-content: space-between;
   padding: 1rem 2rem;
   align-items: center;

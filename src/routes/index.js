@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import Homepage from "../pages/Homepage/Homepage";
-import Signup from "../pages/Signup.js/Signup";
+import Signup from "../pages/Signup/Signup";
 import Login from "../pages/Login/Login";
 import Chat from "../pages/Chat/Chat";
 

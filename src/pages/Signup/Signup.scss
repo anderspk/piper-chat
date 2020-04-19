@@ -1,0 +1,120 @@
+@keyframes animateWave {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1, 0.9);
+  }
+}
+
+@keyframes animateWhale {
+  from {
+    transform: scale(1, 1) rotate(20deg);
+  }
+  to {
+    transform: scale(1, 0.9) rotate(15deg);
+  }
+}
+
+.signup {
+  color: white;
+  height: 100%;
+  background-color: #4982f5;
+
+  section {
+    position: relative;
+    overflow: hidden;
+
+    &.top {
+      height: 70%;
+
+      .wave {
+        position: absolute;
+        bottom: 0;
+        fill: #d6e4ff;
+        transform-origin: bottom;
+        animation: animateWave 3000ms ease-in-out infinite alternate;
+
+        &.light {
+          fill: #d6e4ff38;
+          bottom: 2rem;
+        }
+      }
+    }
+
+    &.bottom {
+      height: 30%;
+      background: #d6e4ff;
+    }
+
+    .whale {
+      width: 50%;
+      max-width: 600px;
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      transform-origin: bottom;
+      animation: animateWhale 3000ms ease-in-out infinite alternate;
+    }
+  }
+
+  .container {
+    z-index: 2;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 1rem;
+    position: absolute;
+    bottom: 12rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    .padded-container {
+      padding: 3rem 2rem;
+      border-radius: 4px;
+      background-color: #3a506b;
+      -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
+
+      h2 {
+        margin: 0;
+        font-weight: normal;
+        text-align: center;
+      }
+
+      .blurb {
+        opacity: 0.6;
+        margin: 0;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          margin-top: 1rem;
+          opacity: 0.6;
+          text-transform: uppercase;
+          font-size: 0.8rem;
+        }
+
+        input {
+          padding: 0.3rem 0.5rem;
+          margin-top: 0.3rem;
+          background-color: #253c56;
+          border: 1px solid #0f1924;
+          border-radius: 4px;
+          font-size: 1rem;
+          color: white;
+
+          &:focus {
+            outline-color: #d67c7e;
+          }
+        }
+      }
+    }
+  }
+}
