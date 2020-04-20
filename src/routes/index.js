@@ -7,11 +7,23 @@ import Signup from "../pages/Signup/Signup";
 import Login from "../pages/Login/Login";
 import Chat from "../pages/Chat/Chat";
 
-export default () => (
+export default ({ authenticated }) => (
   <Routes>
     <Route exact path="/" element={<Homepage />} />
-    <PublicRoute path="/signup" element={<Signup />} authenticated={false} />
-    <PublicRoute path="/login" element={<Login />} authenticated={false} />
-    <PrivateRoute path="/chat" element={<Chat />} authenticated={false} />
+    <PublicRoute
+      path="/signup"
+      element={<Signup />}
+      authenticated={authenticated}
+    />
+    <PublicRoute
+      path="/login"
+      element={<Login />}
+      authenticated={authenticated}
+    />
+    <PrivateRoute
+      path="/chat"
+      element={<Chat />}
+      authenticated={authenticated}
+    />
   </Routes>
 );

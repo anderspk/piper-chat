@@ -16,16 +16,18 @@ const App = () => {
       if (user) {
         setAuthenticated(true);
       } else {
-        console.log("loading");
+        setAuthenticated();
       }
     });
   }, []);
 
+  console.log(authenticated);
+
   return (
     <div className="app">
       <BrowserRouter>
-        <Header />
-        <Routes className="DU" />
+        <Header authenticated={authenticated} />
+        <Routes authenticated={authenticated} />
         <Footer />
       </BrowserRouter>
     </div>

@@ -24,11 +24,12 @@ header {
     }
   }
 
-  nav a {
+  nav > * {
     color: white;
     opacity: 0.8;
     transition: opacity 0.2s;
     margin-left: 1rem;
+    font-size: inherit;
 
     &:hover {
       opacity: 1;
