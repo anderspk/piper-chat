@@ -3,7 +3,12 @@ import { auth } from "../services/firebase";
 export const signup = (email, password) =>
   auth().createUserWithEmailAndPassword(email, password);
 
-export const signInWithGoogle = () => {
+export const signInWithGoogle = async () => {
   const provider = new auth.GoogleAuthProvider();
+  return auth().signInWithPopup(provider);
+};
+
+export const signInWithGithub = async () => {
+  const provider = new auth.GithubAuthProvider();
   return auth().signInWithPopup(provider);
 };

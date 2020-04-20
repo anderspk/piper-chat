@@ -1,5 +1,8 @@
 .app {
-  min-height: 100vh;
-  height: 100vh;
   background-color: #253c56;
+
+  > div {
+    height: 100vh;
+    box-sizing: border-box;
+  }
 }

@@ -4,7 +4,7 @@ import "./Signup.scss";
 import * as auth from "../../helpers/auth";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
-const Signup = () => {
+const SignupSignin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState();
@@ -38,7 +38,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup">
+    <div className="signup-signin">
       <section className="top">
         <div className="container">
           <div className="padded-container">
@@ -98,4 +98,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignupSignin;
