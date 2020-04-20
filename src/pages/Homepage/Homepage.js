@@ -15,12 +15,12 @@ const Homepage = () => {
 
       <div className="buttons-container">
         <button
-          className="create-new-account"
+          className="create-new-account-button"
           onClick={() => navigate("/signup")}
         >
           Create New Account
         </button>
-        <button className="login" onClick={() => navigate("/login")}>
+        <button className="login-button" onClick={() => navigate("/login")}>
           Login to Your Account
         </button>
       </div>

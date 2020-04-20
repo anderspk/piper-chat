@@ -1,7 +1,11 @@
 import React from "react";
+import SignupSigninForm from "../components/SignupSigninForm/SignupSigninForm";
+import "./Login.scss";
 
-const Login = () => {
-  return <div className="login">Login page</div>;
-};
+const Login = () => (
+  <div className="login">
+    <SignupSigninForm signin />
+  </div>
+);
 
 export default Login;

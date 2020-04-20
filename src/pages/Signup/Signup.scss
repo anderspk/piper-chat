@@ -17,7 +17,6 @@
 }
 
 .signup {
-  color: white;
   height: 100%;
   background-color: #4982f5;
   overflow: hidden;
@@ -55,121 +54,6 @@
       right: 5%;
       transform-origin: bottom;
       animation: animateWhale 3000ms ease-in-out infinite alternate;
-    }
-  }
-
-  .container {
-    z-index: 2;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 500px;
-    padding: 0 1rem;
-    position: absolute;
-    top: 5rem;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-
-    .padded-container {
-      padding: 3rem 2rem;
-      border-radius: 4px;
-      background-color: #3a506b;
-      -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
-      -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
-      box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
-
-      h2 {
-        margin: 0;
-        font-weight: normal;
-        text-align: center;
-      }
-
-      .blurb {
-        opacity: 0.6;
-        margin: 0;
-        text-align: center;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-
-        label {
-          margin-top: 1rem;
-          opacity: 0.6;
-          text-transform: uppercase;
-          font-size: 0.8rem;
-        }
-
-        input {
-          outline: none;
-          padding: 10px;
-          margin-top: 0.3rem;
-          background-color: #253c56;
-          border: 1px solid #0f1924;
-          border-radius: 4px;
-          font-size: 1rem;
-          color: rgba(255, 255, 255, 0.6);
-          transition: all 0.25s;
-
-          &:focus {
-            border-color: #d67c7e;
-          }
-        }
-
-        .sign-up {
-          background-color: #d67c7e;
-          padding: 0.8rem;
-          margin: 1rem 0;
-          border-radius: 4px;
-          color: white;
-          font-size: 0.9rem;
-          transition: all 0.2s;
-          font-weight: bold;
-
-          &:hover {
-            background-color: #d66c6e;
-          }
-        }
-
-        .other-services-container {
-          span {
-            opacity: 0.8;
-            text-align: center;
-            display: block;
-          }
-
-          .buttons-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1rem;
-
-            button {
-              border-radius: 4px;
-              padding: 0.8rem;
-              font-weight: bold;
-              color: white;
-              transition: all 0.2s;
-              flex: 1;
-              max-width: 49%;
-
-              &.google-signup {
-                border: 1px solid #0b67ad;
-                &:hover {
-                  background-color: #0b67ad;
-                }
-              }
-
-              &.github-signup {
-                border: 1px solid #747474;
-                &:hover {
-                  background-color: #747474;
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
