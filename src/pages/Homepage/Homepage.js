@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../images/pp-big-logo.png";
 import "./Homepage.scss";
+import { auth } from "../../services/firebase";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -14,15 +15,24 @@ const Homepage = () => {
       </p>
 
       <div className="buttons-container">
-        <button
-          className="create-new-account-button"
-          onClick={() => navigate("/signup")}
-        >
-          Create New Account
-        </button>
-        <button className="login-button" onClick={() => navigate("/login")}>
-          Login to Your Account
-        </button>
+        {auth().currentUser ? (
+          <>
+            <h2>{`Hello, ${auth().currentUser.email}`}</h2>
+            <button className="go-to-chat-button">Go to Chat</button>
+          </>
+        ) : (
+          <>
+            <button
+              className="create-new-account-button"
+              onClick={() => navigate("/signup")}
+            >
+              Create New Account
+            </button>
+            <button className="login-button" onClick={() => navigate("/login")}>
+              Login to Your Account
+            </button>
+          </>
+        )}
       </div>
       <img src={logo} alt="Logo" />
     </div>
