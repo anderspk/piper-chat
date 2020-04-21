@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -16,14 +16,6 @@ jobs:
         run: npm i
       - name: Build
         run: npm run build
-
-  deploy:
-    name: Deploy
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v1.3.0
         with:
