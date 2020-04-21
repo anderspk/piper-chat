@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout master
-        uses: actions/checkout@v1
+        uses: actions/checkout@master
       - name: Set up Node 13.x
         uses: actions/setup-node@v1
         with:
@@ -16,5 +16,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm i
+          mkdir ~/.npm-global
+          npm config set prefix '~/.npm-global'
+          PATH=~/.npm-global/bin:$PATH
+          npm i -g firebase-tools
           npm run build
           npm run deploy
