@@ -1,24 +1,39 @@
-name: Development Workflow
+name: Build and Deploy to Firebase
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  test:
-    name: CI Pipeline
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
+      - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Set up Node 13.x
-        uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: npm i
+      - name: Build
+        run: npm run build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
         with:
-          node-version: 13.x
-      - name: Install dependencies
-        run: |
-          npm i
-          mkdir ~/.npm-global
-          npm config set prefix '~/.npm-global'
-          PATH=~/.npm-global/bin:$PATH
-          npm i -g firebase-tools
-          npm run build
-          npm run deploy
+          name: build
+          path: build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v1.3.0
+        with:
+          args: deploy --only hosting
