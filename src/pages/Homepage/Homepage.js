@@ -18,7 +18,12 @@ const Homepage = () => {
         {auth().currentUser ? (
           <>
             <h2>{`Hello, ${auth().currentUser.email}`}</h2>
-            <button className="go-to-chat-button">Go to Chat</button>
+            <button
+              className="go-to-chat-button"
+              onClick={() => navigate("/chat")}
+            >
+              Go to Chat
+            </button>
           </>
         ) : (
           <>
